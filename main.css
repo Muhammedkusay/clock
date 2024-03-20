@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --clock-padding: 12px;
+    --clock-padding-1: 84px;
+    --clock-padding-2: 36px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    width: 400px;
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #fff;
+    border: 30px solid #4b4b4b;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset,
+                rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.clock .numbers div {
+    color: #333;
+    font-size: 1.8em;
+    font-weight: 500;
+    position: absolute;
+}
+
+.clock .numbers .twelve {
+    top: var(--clock-padding);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock .numbers .eleven {
+    top: calc(33.33% / 2 - 5px);
+    left: var(--clock-padding-1);
+    transform: translateY(-50%);
+}
+
+.clock .numbers .ten {
+    top: calc(66.66% / 2 - 8px);
+    left: var(--clock-padding-2);
+    transform: translateY(-50%);
+}
+
+.clock .numbers .nine {
+    top: 50%;
+    left: var(--clock-padding);
+    transform: translateY(-50%);
+}
+
+.clock .numbers .eight {
+    bottom: calc(66.66% / 2 - 8px);
+    left:calc(var(--clock-padding-2) + 4px);
+    transform: translateY(50%);
+}
+
+.clock .numbers .seven {
+    bottom: calc(33.33% / 2 - 5px);
+    left: calc(var(--clock-padding-1) + 6px);
+    transform: translateY(50%);
+}
+
+.clock .numbers .six {
+    left: 50%;
+    bottom: var(--clock-padding);
+    transform: translateX(-50%);
+}
+
+.clock .numbers .five {
+    bottom: calc(33.33% / 2 - 5px);
+    right: calc(var(--clock-padding-1) + 2px);
+    transform: translateY(50%);
+}
+
+.clock .numbers .four {
+    bottom: calc(66.66% / 2 - 10px);
+    right:calc(var(--clock-padding-2) + 4px);
+    transform: translateY(50%);
+}
+
+.clock .numbers .three {
+    top: 50%;
+    right: var(--clock-padding);
+    transform: translateY(-50%);
+}
+
+.clock .numbers .two {
+    top: calc(66.66% / 2 - 4px);
+    right: var(--clock-padding-2);
+    transform: translateY(-50%);
+}
+
+.clock .numbers .one {
+    top: calc(33.33% / 2 - 2px);
+    right: calc(var(--clock-padding-1) + 4px);
+    transform: translateY(-50%);
+}
+
+.clock .sco {
+    position: relative;
+    z-index: 2;
+}
+
+.clock .sco div {
+    width: 160px;
+    height: 4px;
+    top: 2px;
+    transform: translateY(50%);
+    background-color: #333;
+    border-radius: 50vh;
+    position: absolute;
+    transform-origin: 0;
+    z-index: -1;
+}
+
+.clock .sco::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    border-radius: 50vh;
+    background-color: #4c4c4c;
+}
+
+.clock .sco .hours {
+    width: 90px;
+}
+
+.clock .sco .minutes {
+    width: 130px;
+}
+
+.clock .sco .seconds {
+    width: 160px;
+    height: 2px;
+    background-color: crimson;
+}
